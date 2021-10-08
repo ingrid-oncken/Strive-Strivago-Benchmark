@@ -10,7 +10,7 @@ import {
 import usersRouter from './services/user/index.js'
 
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 const mongoConnection = process.env.MONGO_CONNECTION_STRING
 
