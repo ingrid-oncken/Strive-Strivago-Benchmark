@@ -1,5 +1,5 @@
-
-import express from 'express'
+import express, { Request, Response, NextFunction } from 'express'
+import { UserSchema } from '../src/services/user/schema'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import {
@@ -8,7 +8,6 @@ import {
   catchAllHandler,
 } from './errorHandlers.js'
 import usersRouter from './services/user/index.js'
-
 
 const port = process.env.PORT || 3000
 
@@ -26,7 +25,6 @@ server.use('/users', usersRouter)
 server.use(unauthorizedHandler)
 server.use(forbiddenHandler)
 server.use(catchAllHandler)
-
 
 server.listen(port, async () => {
   try {
